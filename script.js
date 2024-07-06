@@ -19,6 +19,7 @@ console.log(randomNum);
 checkEl.onclick = function() {
     console.log(numberEl.textContent, guessEl.value);
     if(guessEl.value == randomNum) {
+        checkEl.classList.add('wrong');
         bodyEl.style.background = 'Green';
         messageEl.textContent = "Correct Number!";
         numberEl.textContent = randomNum;
@@ -49,7 +50,8 @@ againEl.onclick = function() {
     guessEl.value = "";
     bodyEl.style.background = "#222222";
     scoreEl.textContent = "20";
-
+    currentScore = 20;
+    checkEl.classList.remove('wrong');
     let newRandomNum = Math.floor(Math.random() * 20 + 1);
     randomNum = newRandomNum;
     console.log(randomNum);
